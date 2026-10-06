@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Task 5</h1>
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="age" placeholder="Age">
+<button onclick="submitForm()">Submit</button>
+<p id="timestamp"></p>
+
+
+
+
+<script>
+function submitForm() {
+    const object = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        timestamp: new Date().toISOString()
+    };
+    document.getElementById("timestamp").innerHTML = object.timestamp;
+    alert("your Name is: " + object.name + ", your Age is: " + object.age + ", Timestamp: " + object.timestamp);
+}
+
+</script>
+
+</body>
+</html>
