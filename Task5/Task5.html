@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Task 5</h1>
+
+<p id="demo"></p>
+
+<script>
+setInterval(Clock, 1000);
+
+function Clock() {
+  const date = new Date();
+  document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+}
+</script>
+
+</body>
+</html>
