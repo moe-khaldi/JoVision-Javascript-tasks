@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+   
+</head>
+<body>
+  
+        <h1>Task 11</h1>
+        <button class="button"id="output">Get IP</button>
+        
+        <script>
+            const button = document.querySelector(".button");
+
+            button.addEventListener("click", () => {
+                fetch('https://api.ipify.orgx?format=json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data.ip);
+                        const output = document.getElementById("output");
+                        output.innerHTML = data.ip;
+                    })
+                    .catch(error => alert('Error: ' + error.message));
+            });
+        </script>
+            
+            
+            
+        </body>
+</html>
