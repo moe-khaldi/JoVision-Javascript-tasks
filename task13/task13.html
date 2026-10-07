@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Task 13</h1>
+<input type="text" id="name" placeholder="Name">
+
+<button id="submitBtn">Submit</button>
+
+
+
+
+
+<script>
+
+document.getElementById("submitBtn").addEventListener("click", submitForm);
+
+function submitForm() {
+    const object = {
+        name: document.getElementById("name").value
+       
+    };
+    fetch('https://api.agify.io?name=' + object.name)
+        .then(response => response.json())
+        .then(data => {
+            object.age = data.age;
+           
+            alert("your Name is: " + object.name + ", your Age is: " + object.age );
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+</script>
+
+</body>
+</html>
